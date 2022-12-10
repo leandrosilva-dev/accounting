@@ -1,0 +1,20 @@
+version: "3.9"
+
+services:
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+  db:
+    image: mariadb/server
+    volumes:
+      - db_data:/home/leandro/mysql
+    environment:
+      - MYSQL_DATABASE=accounting
+      - MYSQL_USER=
+      - MYSQL_ROOT_PASSWORD=
+      - MYSQL_PASSWORD=
+    expose:
+      - 3306
+    ports:
+      - "3306:3306"
+volumes:
+  db_data:

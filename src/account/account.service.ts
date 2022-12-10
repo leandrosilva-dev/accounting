@@ -12,4 +12,9 @@ export class AccountService {
   find(): Promise<Account[]> {
     return this.accountRepository.find();
   }
+
+  async save(account: Account): Promise<void> {
+    console.log('Posting');
+    this.accountRepository.save(account);
+  }
 }

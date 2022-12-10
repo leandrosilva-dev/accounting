@@ -12,12 +12,13 @@ import { EntryModule } from './entry/entry.module';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mariadb',
-      host: '',
+      host: 'localhost',
       port: 3306,
       username: '',
       password: '',
       database: 'accounting',
       entities: [Account, Entry],
+      synchronize: true,
     }),
     AccountModule,
     EntryModule,

@@ -1,4 +1,12 @@
-import { Controller } from '@nestjs/common';
+import { Controller, Get } from '@nestjs/common';
+import { EntryService } from './entry.service';
 
 @Controller('entry')
-export class Entry {}
+export class EntryController {
+  constructor(private entryService: EntryService) {}
+
+  @Get()
+  getHello(): string {
+    return this.entryService.getHello();
+  }
+}
